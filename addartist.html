@@ -1,0 +1,24 @@
+<html>
+  <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<title>Agregar Artista</title>
+	<LINK href="miestilo.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+
+
+
+<div id="titulodelformulario">Agregar Artista</div>
+
+<div id="formulariocontainer">
+
+<form method="POST" action="http://localhost:4567/artists">
+    <div>Nombre</div>  <input type=text name="name">
+    <div>Surname</div> <input type=text name="surname">
+    <div>Nickname</div> <input type=text name="nickname"><br>
+    <input type=submit name=press value="Enviar">
+ </form>
+</div>
+
+</body>
+</html>

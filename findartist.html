@@ -1,0 +1,26 @@
+<html>
+  <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<title>Buscar Artista</title>
+	<LINK href="miestilo.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+
+
+
+<div id="titulodelformulario">Buscar Artista</div>
+
+<div id="formulariocontainer">
+
+<form method="GET" action="http://localhost:4567/artists/findbyallattributes/">
+    <div>Nombre</div>  <input type=text name="name">
+    <div>Surname</div> <input type=text name="surname">
+    <div>Nickname</div> <input type=text name="nickname"><br>
+    <input type=submit name=press value="Enviar">
+ </form>
+</div>
+
+<div id="info">Si no encuentra registros no devuelve nada</div>
+
+</body>
+</html>
