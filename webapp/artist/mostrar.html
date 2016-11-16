@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/artistadmin/mystyle.css">
+    <title>Mostrar Artista</title>
+
+    <script src="/artistadmin/jquery.min.js"></script>
+    <script languague="javascript">
+      var response='';
+      function getartists(){
+         $.get("http://localhost:4567/artists", function(data, status){
+            request = JSON.parse(data);
+
+            response = '<table><tr><th>Name</th><th>Surname</th><th>Nickname</th></tr>';
+            $.each(request, function(i, item) {
+              //item.artistID
+              response += '<tr>'+'<td>'+item.name+'</td>'+'<td>'+item.surname+'</td>'+'<td>'+item.nickname+'</td>'+'</tr>';
+            });
+            response += '</table>';
+            $("#datacount").html('Se encontraron '+request.length+' registros de artistas.');
+            if (request.length>0)
+              $("#datatable").html(response);
+ 
+          });
+        }
+      $(window).ready(function() {
+      getartists();
+      });
+    </script>
+   </head>
+
+  <body>
+    <h1> Admin Artist - Shows </h1>
+    <div id="dataresult">
+      <div id="datacount"></div>
+      <div id="datatable"></div>
+    </div>
+  </body>
+</html>
