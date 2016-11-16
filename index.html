@@ -1,26 +1,47 @@
+<!DOCTYPE html>
+
 <html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-</head>
-<body>
-<a href="http://localhost:4567/artists"> Ver todos los registros</a>
-<div id="images"></div>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<!--<a href="http://localhost:4567/artists"> Ver todos los registros</a>-->
+		<button onclick="ajax();">Search</button>
+		<div id="data"></div>
  
-<script>
-(function() {
-  var flickerAPI = "http://localhost:4567/artists";
-  $.getJSON( flickerAPI, {name:"name"
-  })
-    .done(function( data ) {
-      $.each( data.items, function( i, item ) {
-      	alert(i);
-        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-        if ( i === 3 ) {
-          return false;
-        }
-      });
-    });
-})();
-</script>
-</body>
+		<script>
+		function ajax() {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', "http://localhost:4567/artists", true);
+			xhr.addEventListener("readystatechange", processRequest, false);
+
+			function processRequest(e) {
+				var response = JSON.parse(xhr.responseText);
+	        	var elem = document.getElementById("data");
+        		elem.innerHTML = xhr.responseText;
+			    /*if (xhr.readyState == 4 && xhr.status == 200) {
+        			var response = JSON.parse(xhr.responseText);
+	        		var elem = document.getElementById("data");
+        			elem.innerHTML = xhr.responseText;
+    			}*/
+			}
+			xhr.send();
+		};
+		//ajax();
+		/*(function() {
+			var flickerAPI = "http://localhost:4567/artists";
+	  		$.getJSON( flickerAPI, {name:"name"})
+    		.done(function( data ) {
+      			$.each( data.items, function( i, item ) {
+      				alert(i);
+        			$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        			if ( i === 3 ) {
+        	  			return false;
+        			}
+      			});
+		    });
+		})();*/
+		</script>
+	</body>
 </html>
