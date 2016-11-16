@@ -1,0 +1,51 @@
+#dataresult
+{ 
+    padding: 10px;
+    width: 80%; 
+    margin-left:auto; 
+    margin-right: auto; 
+    height:50%;
+    min-height:500px;
+    background-color: #CFCFCF;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    font-family: "Times New Roman", Georgia, Serif;
+
+}
+
+h1 {
+    text-align: center;
+    color: #FFFFFF;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+html,body
+{
+    background-color: #004084;
+    margin:0;
+    padding:0;
+    height: 100%;
+
+}
+
+header,nav,article 
+{                           
+    display: block
+}
+
+nav 
+{
+    float: left; 
+    width: 20%
+}
+
+article 
+{
+    float: right; 
+    width: 79%
+}
